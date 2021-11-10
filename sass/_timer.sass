@@ -1,0 +1,54 @@
+.timer
+    margin: auto
+    padding: 20px
+    background: #211D2B
+    border-radius: 12px
+    display: flex
+    grid-gap: 4px
+    .item
+        width: 50px
+        height: 70px
+        color: hsl(345, 95%, 68%)
+        top: 0
+        perspective: 1000
+        transform-style: preserve-3d
+        .inner
+            width: 50px
+            height: 70px
+            transform-style: preserve-3d
+            position: relative
+            .front, .back
+                width: 50px
+                height: 70px
+                text-align: center
+                line-height: 70px
+                position: absolute
+                top: 0
+                left: 0
+                backface-visibility: hidden
+                background: linear-gradient(to bottom, #414164 0px, #414164 34px, #211D2B 35px, #211D2B 36px, #46425e 37px, #373350 70px)
+                border-radius: 6px
+                &::before, &::after
+                    content: ''
+                    width: 8px
+                    height: 8px
+                    background: #211D2B
+                    display: block
+                    position: absolute
+                    z-index: 3
+                    top: 31px
+                    border-radius: 4px
+                &::before
+                    left: -4px
+                &::after
+                    right: -4px
+            .front
+                transform: rotateX(0deg)
+                z-index: 2
+            .back
+                transform: rotateX(-180deg)
+        &.flip
+            transition: 0.6s
+            transform: rotateX(-180deg)
+
+
