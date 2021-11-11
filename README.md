@@ -45,5 +45,5 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Skaneris)
-- FaceBook - [@yourusername](https://www.facebook.com/dneprserp)
+- Frontend Mentor - [@Skaneris](https://www.frontendmentor.io/profile/Skaneris)
+- FaceBook - [@dneprserp](https://www.facebook.com/dneprserp)
