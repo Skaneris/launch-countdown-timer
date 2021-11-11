@@ -1,37 +1,57 @@
+$top-card: #2C2C44
+$bottom-card: #34364F
+
+$card-width: 72px
+$card-height: 68px
+
+$dtop-c-width: 150px
+$dtop-c-height: 140px
+
 .timer
     flex: 0 0 33.333%
     padding: 20px
-    // background: #211D2B
-    border-radius: 12px
     display: flex
     align-items: center
-    grid-gap: 4px
+    grid-gap: 16px
+    @media screen and ( min-width: 800px )
+        grid-gap: 34px
     .item
-        width: 72px
-        height: 68px
-        color: hsl(345, 95%, 68%)
+        width: $card-width
+        height: $card-height
         top: 0
         perspective: 1000
         transform-style: preserve-3d
+        @media screen and ( min-width: 800px )
+            width: $dtop-c-width
+            height: $dtop-c-height
         .inner
-            width: 72px
-            height: 68px
+            width: $card-width
+            height: $card-height
             font-size: 36px
             font-weight: 700
-            line-height: 1
             transform-style: preserve-3d
             position: relative
+            @media screen and ( min-width: 800px )
+                font-size: 70px
+                width: $dtop-c-width
+                height: $dtop-c-height
             .front, .back
-                width: 72px
-                height: 68px
+                width: $card-width
+                height: $card-height
                 text-align: center
-                line-height: 68px
+                line-height: $card-height
                 position: absolute
                 top: 0
                 left: 0
                 backface-visibility: hidden
-                background: linear-gradient(to bottom, hsl(236, 21%, 26%) 0px, hsl(236, 21%, 26%) 33px, #211D2B 34px, #211D2B 35px, #46425e 36px, #373350 68px)
+                background: linear-gradient(to bottom, $top-card 0px, $top-card 34px, #211D2B 34px, #211D2B 35px, $bottom-card 36px, $bottom-card $card-height)
                 border-radius: 6px
+                @media screen and ( min-width: 800px )
+                    width: $dtop-c-width
+                    height: $dtop-c-height
+                    line-height: $dtop-c-height
+                    background: linear-gradient(to bottom, $top-card 0px, $top-card 70px, #211D2B 70px, #211D2B 71px, $bottom-card 71px, $bottom-card $dtop-c-height)
+                    border-radius: 8px
                 &::before, &::after
                     content: ''
                     width: 8px
@@ -42,6 +62,11 @@
                     z-index: 3
                     top: 31px
                     border-radius: 4px
+                    @media screen and ( min-width: 800px )
+                        width: 10px
+                        height: 10px
+                        border-radius: 5px
+                        top: 65px
                 &::before
                     left: -4px
                 &::after
@@ -55,4 +80,17 @@
             transition: 0.6s
             transform: rotateX(-180deg)
 
-
+$darken-red: #a84059
+$soft-red: hsl(345, 95%, 68%)
+.text
+    width: $card-width
+    height: $card-height
+    background: linear-gradient(to bottom, $darken-red 0px, $darken-red 34px, #211D2B 34px, #211D2B 35px, $soft-red 35px, $soft-red 68px)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    @media screen and ( min-width: 800px )
+        width: $dtop-c-width
+        height: $dtop-c-height
+        background: linear-gradient(to bottom, $darken-red 0px, $darken-red 70px, #211D2B 70px, #211D2B 71px, $soft-red 71px, $soft-red $dtop-c-height)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent

@@ -53,9 +53,9 @@ function countDate(){
 
 function flip(el, val) {
     const wrap = el.parentElement
-    el.querySelector('.back').innerHTML = val
+    el.querySelector('.back > .text').innerHTML = val
     wrap.addEventListener('transitionend', () => {
-        el.querySelector('.front').innerHTML = val
+        el.querySelector('.front > .text').innerHTML = val
         wrap.classList.remove('flip')
     })
     

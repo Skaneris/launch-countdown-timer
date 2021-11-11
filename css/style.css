@@ -13,7 +13,9 @@ html {
 
 body {
   width: 100%;
+  min-width: 375px;
   height: 100vh;
+  overflow-x: hidden;
   font-family: 'Red Hat Text';
   background: url(../images/bg-stars.svg) center center no-repeat #1e1f29;
 }
@@ -41,6 +43,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: bottom center url(../images/pattern-hills.svg) no-repeat;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -72,25 +84,38 @@ body {
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 800px) {
+  .header {
+    padding: 0 30px 50px 30px;
+  }
+  .header h1 {
+    font-size: 26px;
+  }
+}
+
 .timer {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 33.333%;
           flex: 0 0 33.333%;
   padding: 20px;
-  border-radius: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-gap: 4px;
+  grid-gap: 16px;
+}
+
+@media screen and (min-width: 800px) {
+  .timer {
+    grid-gap: 34px;
+  }
 }
 
 .timer .item {
   width: 72px;
   height: 68px;
-  color: #fb6087;
   top: 0;
   -webkit-perspective: 1000;
           perspective: 1000;
@@ -98,15 +123,29 @@ body {
           transform-style: preserve-3d;
 }
 
+@media screen and (min-width: 800px) {
+  .timer .item {
+    width: 150px;
+    height: 140px;
+  }
+}
+
 .timer .item .inner {
   width: 72px;
   height: 68px;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   position: relative;
+}
+
+@media screen and (min-width: 800px) {
+  .timer .item .inner {
+    font-size: 70px;
+    width: 150px;
+    height: 140px;
+  }
 }
 
 .timer .item .inner .front, .timer .item .inner .back {
@@ -119,8 +158,18 @@ body {
   left: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  background: linear-gradient(to bottom, #343650 0px, #343650 33px, #211D2B 34px, #211D2B 35px, #46425e 36px, #373350 68px);
+  background: linear-gradient(to bottom, #2C2C44 0px, #2C2C44 34px, #211D2B 34px, #211D2B 35px, #34364F 36px, #34364F 68px);
   border-radius: 6px;
+}
+
+@media screen and (min-width: 800px) {
+  .timer .item .inner .front, .timer .item .inner .back {
+    width: 150px;
+    height: 140px;
+    line-height: 140px;
+    background: linear-gradient(to bottom, #2C2C44 0px, #2C2C44 70px, #211D2B 70px, #211D2B 71px, #34364F 71px, #34364F 140px);
+    border-radius: 8px;
+  }
 }
 
 .timer .item .inner .front::before, .timer .item .inner .front::after, .timer .item .inner .back::before, .timer .item .inner .back::after {
@@ -133,6 +182,15 @@ body {
   z-index: 3;
   top: 31px;
   border-radius: 4px;
+}
+
+@media screen and (min-width: 800px) {
+  .timer .item .inner .front::before, .timer .item .inner .front::after, .timer .item .inner .back::before, .timer .item .inner .back::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    top: 65px;
+  }
 }
 
 .timer .item .inner .front::before, .timer .item .inner .back::before {
@@ -159,6 +217,24 @@ body {
   transition: 0.6s;
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
+}
+
+.text {
+  width: 72px;
+  height: 68px;
+  background: linear-gradient(to bottom, #a84059 0px, #a84059 34px, #211D2B 34px, #211D2B 35px, #fb6087 35px, #fb6087 68px);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 800px) {
+  .text {
+    width: 150px;
+    height: 140px;
+    background: linear-gradient(to bottom, #a84059 0px, #a84059 70px, #211D2B 70px, #211D2B 71px, #fb6087 71px, #fb6087 140px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .footer {
