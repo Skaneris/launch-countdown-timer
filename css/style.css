@@ -253,6 +253,7 @@ body {
   .timer__bottom div {
     width: 150px;
     font-size: 14px;
+    letter-spacing: 4px;
   }
 }
 
