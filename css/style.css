@@ -97,10 +97,13 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 33.333%;
           flex: 0 0 33.333%;
-  padding: 20px;
+  width: 375px;
+  padding: 19px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -110,17 +113,19 @@ body {
 @media screen and (min-width: 800px) {
   .timer {
     grid-gap: 34px;
+    width: 742px;
   }
 }
 
 .timer .item {
   width: 72px;
   height: 68px;
-  top: 0;
   -webkit-perspective: 1000;
           perspective: 1000;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 @media screen and (min-width: 800px) {
@@ -217,6 +222,38 @@ body {
   transition: 0.6s;
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
+}
+
+.timer__bottom {
+  height: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+}
+
+.timer__bottom div {
+  width: 72px;
+  font-size: 10px;
+  color: #8486a9;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 800px) {
+  .timer__bottom {
+    margin: -20px 0 0 0;
+    gap: 34px;
+  }
+  .timer__bottom div {
+    width: 150px;
+    font-size: 14px;
+  }
 }
 
 .text {

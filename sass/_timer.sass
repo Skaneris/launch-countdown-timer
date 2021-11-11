@@ -9,18 +9,21 @@ $dtop-c-height: 140px
 
 .timer
     flex: 0 0 33.333%
-    padding: 20px
+    width: 375px
+    padding: 19px
     display: flex
+    flex-wrap: wrap
     align-items: center
     grid-gap: 16px
     @media screen and ( min-width: 800px )
         grid-gap: 34px
+        width: 742px
     .item
         width: $card-width
         height: $card-height
-        top: 0
         perspective: 1000
         transform-style: preserve-3d
+        align-self: flex-end
         @media screen and ( min-width: 800px )
             width: $dtop-c-width
             height: $dtop-c-height
@@ -79,6 +82,24 @@ $dtop-c-height: 140px
         &.flip
             transition: 0.6s
             transform: rotateX(-180deg)
+    &__bottom
+        height: 20px
+        flex: 0 0 100%
+        align-self: flex-start
+        display: flex
+        gap: 16px
+        div
+            width: $card-width
+            font-size: 10px
+            color: hsl(237, 18%, 59%)
+            text-align: center
+            text-transform: uppercase
+        @media screen and ( min-width: 800px )
+            margin: -20px 0 0 0
+            gap: 34px
+            div
+                width: $dtop-c-width
+                font-size: 14px
 
 $darken-red: #a84059
 $soft-red: hsl(345, 95%, 68%)

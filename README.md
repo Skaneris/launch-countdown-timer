@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Link to solution](https://www.frontendmentor.io/solutions/launch-countdown-timer-html-javascript-F7cVaHSVk)
 - Live Site URL: [launch-countdown-timer](https://skaneris.github.io/launch-countdown-timer/)
 
 ## My process
