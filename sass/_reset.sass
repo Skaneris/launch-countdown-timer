@@ -10,12 +10,16 @@ body
     width: 100%
     height: 100vh
     font-family: 'Red Hat Text'
-    background: url(../images/bg-stars.svg) center center/100% no-repeat hsl(235, 16%, 14%)
+    background: url(../images/bg-stars.svg) center center no-repeat hsl(235, 16%, 14%)
+    @media screen and ( min-width: 800px )
+        background: url(../images/bg-stars.svg) center center/100% no-repeat hsl(235, 16%, 14%)
 .container
     width: 100%
     height: 100%
     display: flex
     flex-direction: column
-    justify-content: space-around
+    justify-content: space-between
     align-items: center
-    background: url(../images/pattern-hills.svg) bottom center/100% no-repeat
+    background: bottom center url(../images/pattern-hills.svg) no-repeat
+    @media screen and ( min-width: 1440px )
+        background: bottom center/100% url(../images/pattern-hills.svg) no-repeat

@@ -1,32 +1,36 @@
 .timer
-    margin: auto
+    flex: 0 0 33.333%
     padding: 20px
-    background: #211D2B
+    // background: #211D2B
     border-radius: 12px
     display: flex
+    align-items: center
     grid-gap: 4px
     .item
-        width: 50px
-        height: 70px
+        width: 72px
+        height: 68px
         color: hsl(345, 95%, 68%)
         top: 0
         perspective: 1000
         transform-style: preserve-3d
         .inner
-            width: 50px
-            height: 70px
+            width: 72px
+            height: 68px
+            font-size: 36px
+            font-weight: 700
+            line-height: 1
             transform-style: preserve-3d
             position: relative
             .front, .back
-                width: 50px
-                height: 70px
+                width: 72px
+                height: 68px
                 text-align: center
-                line-height: 70px
+                line-height: 68px
                 position: absolute
                 top: 0
                 left: 0
                 backface-visibility: hidden
-                background: linear-gradient(to bottom, #414164 0px, #414164 34px, #211D2B 35px, #211D2B 36px, #46425e 37px, #373350 70px)
+                background: linear-gradient(to bottom, hsl(236, 21%, 26%) 0px, hsl(236, 21%, 26%) 33px, #211D2B 34px, #211D2B 35px, #46425e 36px, #373350 68px)
                 border-radius: 6px
                 &::before, &::after
                     content: ''
