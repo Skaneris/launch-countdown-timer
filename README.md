@@ -42,6 +42,17 @@ Users should be able to:
 - Mobile-first workflow
 - Native JS
 
+### for 3D flipping use in css
+- for container:
+```
+transform-style: preserve-3d
+perspective: 1200px
+```
+- for flipped element
+```
+transform: rotateX(-180deg)
+```
+
 ## Author
 
 - Frontend Mentor - [@Skaneris](https://www.frontendmentor.io/profile/Skaneris)

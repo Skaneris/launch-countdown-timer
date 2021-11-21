@@ -1,4 +1,3 @@
-$top-card: #2C2C44
 $bottom-card: #34364F
 
 $card-width: 72px
@@ -21,39 +20,28 @@ $dtop-c-height: 140px
     .item
         width: $card-width
         height: $card-height
-        perspective: 1000
-        transform-style: preserve-3d
-        align-self: flex-end
         @media screen and ( min-width: 800px )
             width: $dtop-c-width
             height: $dtop-c-height
         .inner
             width: $card-width
             height: $card-height
-            font-size: 36px
-            font-weight: 700
             transform-style: preserve-3d
+            perspective: 1200px
             position: relative
             @media screen and ( min-width: 800px )
-                font-size: 70px
                 width: $dtop-c-width
                 height: $dtop-c-height
             .front, .back
-                width: $card-width
-                height: $card-height
-                text-align: center
-                line-height: $card-height
+                width: 100%
+                height: 100%
                 position: absolute
                 top: 0
                 left: 0
-                backface-visibility: hidden
-                background: linear-gradient(to bottom, $top-card 0px, $top-card 34px, #211D2B 34px, #211D2B 35px, $bottom-card 36px, $bottom-card $card-height)
+                background: $bottom-card
                 border-radius: 6px
+                overflow: hidden
                 @media screen and ( min-width: 800px )
-                    width: $dtop-c-width
-                    height: $dtop-c-height
-                    line-height: $dtop-c-height
-                    background: linear-gradient(to bottom, $top-card 0px, $top-card 70px, #211D2B 70px, #211D2B 71px, $bottom-card 71px, $bottom-card $dtop-c-height)
                     border-radius: 8px
                 &::before, &::after
                     content: ''
@@ -74,14 +62,62 @@ $dtop-c-height: 140px
                     left: -4px
                 &::after
                     right: -4px
+            .text
+                width: 100%
+                height: 100%
+                font-size: 36px
+                font-weight: 700
+                color: hsl(345, 95%, 68%)
+                display: flex
+                justify-content: center
+                align-items: center
+                @media screen and ( min-width: 800px )
+                    width: $dtop-c-width
+                    height: $dtop-c-height
+                    font-size: 70px
             .front
-                transform: rotateX(0deg)
-                z-index: 2
+                transform-origin: center
+                z-index: 3
             .back
-                transform: rotateX(-180deg)
-        &.flip
-            transition: 0.6s
-            transform: rotateX(-180deg)
+                z-index: 1
+            .middle
+                width: 100%
+                height: 50%
+                position: absolute
+                left: 0
+                top: 0
+                z-index: 2
+                overflow: hidden
+                border-radius: 6px 6px 0 0
+                background: $bottom-card
+                display: none
+                .text
+                    height: 200%
+                .overlay
+                    height: 100%
+                &::before, &::after
+                    content: ''
+                    width: 8px
+                    height: 8px
+                    background: #211D2B
+                    display: block
+                    position: absolute
+                    z-index: 3
+                    top: 31px
+                    border-radius: 4px
+                    @media screen and ( min-width: 800px )
+                        width: 10px
+                        height: 10px
+                        border-radius: 5px
+                        top: 65px
+                &::before
+                    left: -4px
+                &::after
+                    right: -4px
+        &.flip .inner .front
+            animation: flip 0.6s linear
+        &.flip .inner .middle
+            display: block
     &__bottom
         height: 20px
         flex: 0 0 100%
@@ -101,18 +137,21 @@ $dtop-c-height: 140px
                 width: $dtop-c-width
                 font-size: 14px
                 letter-spacing: 4px
+.overlay
+    width: 100%
+    height: 50%
+    background: rgba(0, 0, 0, 0.3)
+    position: absolute
+    left: 0
+    top: 0
 
-$darken-red: #a84059
-$soft-red: hsl(345, 95%, 68%)
-.text
-    width: $card-width
-    height: $card-height
-    background: linear-gradient(to bottom, $darken-red 0px, $darken-red 34px, #211D2B 34px, #211D2B 35px, $soft-red 35px, $soft-red 68px)
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    @media screen and ( min-width: 800px )
-        width: $dtop-c-width
-        height: $dtop-c-height
-        background: linear-gradient(to bottom, $darken-red 0px, $darken-red 70px, #211D2B 70px, #211D2B 71px, $soft-red 71px, $soft-red $dtop-c-height)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
+@keyframes flip
+    0%
+        transform: rotateX(0)
+    49% 
+        transform: rotateX(-90deg) rotateZ(0)
+    50%
+        transform: rotateX(-90deg) rotateZ(-180deg) rotateY(-180deg)
+    100%
+        transform: rotateX(-180deg) rotateZ(-180deg) rotateY(-180deg)
+        
